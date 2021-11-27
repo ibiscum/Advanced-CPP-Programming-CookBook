@@ -22,16 +22,20 @@
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE01
 
-#include "my_library.h"
 #include <iostream>
 
-int main(void)
+int sub(int a, int b)
 {
-    using namespace library_name;
-
-    std::cout << "The answer is: " << my_api() << '\n';
-    return 0;
+	return a + b;
 }
+
+int main()
+{
+	std::cout << "The answer is: " << sub(41, 1) << '\n';
+	return 0;
+}
+
+// The answer is: 42
 
 #endif
 
@@ -39,82 +43,157 @@ int main(void)
 #ifdef EXAMPLE02
 
 #include <iostream>
-#include "my_library.h"
 
-int main(void)
+void add(int a, int &b)
+{ b += a; }
+
+int main()
 {
-    library_name::my_api();
-    return 0;
+	int a = 41, b = 1;
+	add(a, b);
+
+	std::cout << "The answer is: " << b << '\n';
+	return 0;
 }
+
+// The answer is: 42
 
 #endif
 
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE03
 
-#include "my_library.h"
 #include <iostream>
 
-int main(void)
+int add(int a, int b)
+{ return a + b; }
+
+int main()
 {
-    library_name::my_api();
-    return 0;
+	std::cout << "The answer is: " << add(41, 1) << '\n';
+	return 0;
 }
+
+// The answer is: 42
 
 #endif
 
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE04
 
-#include "my_library.h"
+#include <stdio.h>
 #include <iostream>
 
 int main(void)
 {
-    library_name::my_api();
-    library_name::config::show_hex = true;
-    library_name::my_api();
-
-    return 0;
+	printf("The answer is: %d\n", 42);
+	std::cout << "The answer is: " << 42 << '\n';
+	return 0;
 }
+
+// The answer is: 42
+// The answer is: 42
 
 #endif
 
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE05
 
-#include "my_library.h"
+#include <iostream>
 
 int main(void)
 {
-    library_name::my_api(42);
-    return 0;
+	auto answer = 41;
+
+	std::cout << "The answer is: " << ++answer << '\n';
+	std::cout << "The answer is: " << answer++ << '\n';
+
+	return 0;
 }
+
+// The answer is: 42
+// The answer is: 42
 
 #endif
 
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE06
 
-#include "apis.h"
+#include <iostream>
+
+int add(int a, int b)
+{ return a + b; }
+
+int Sub(int a, int b)
+{ return a - b; }
 
 int main(void)
 {
-    library_name::my_api();
-    return 0;
+	std::cout << "The answer is: " << add(41, 1) << '\n';
+	std::cout << "The answer is: " << Sub(43, 1) << '\n';
+
+	return 0;
 }
+
+// The answer is: 42
+// The answer is: 42
 
 #endif
 
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE07
 
-#include "my_library_single.h"
+#include <queue>
+#include <iostream>
 
 int main(void)
 {
-    library_name::my_api();
-    return 0;
+	std::queue<int> my_queue;
+
+	my_queue.emplace(42);
+	std::cout << "The answer is: " << my_queue.front() << '\n';
+	my_queue.pop();
+
+	return 0;
 }
+
+// The answer is: 42
+
+#endif
+
+// -----------------------------------------------------------------------------
+#ifdef EXAMPLE08
+
+#include <iostream>
+
+auto add(int a, int b)
+{ return a + b; }
+
+int main(void)
+{
+	std::cout << "The answer is: " << add(41, 1) << '\n';
+	return 0;
+}
+
+// The answer is: 42
+
+#endif
+
+// -----------------------------------------------------------------------------
+#ifdef EXAMPLE09
+
+#include <iostream>
+
+template <typename T>
+T add(T a, T b)
+{ return a + b; }
+
+int main(void)
+{
+	std::cout << "The answer is: " << add(41, 1) << '\n';
+	return 0;
+}
+
+// The answer is: 42
 
 #endif

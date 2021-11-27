@@ -78,7 +78,7 @@ int main(void)
 }
 
 // ...
-// /home/user/book/chapter05/recipe03.cpp:67:31:   required from here
+// /home/user/book/Chapter05/recipe03.cpp:67:31:   required from here
 // /usr/include/c++/9/bits/std_mutex.h:159:9: error: passing ‘std::lock_guard<const std::mutex>::mutex_type’ {aka ‘const std::mutex’} as ‘this’ argument discards qualifiers [-fpermissive]
 //   159 |       { _M_device.lock(); }
 //       |         ^~~~~~~~~

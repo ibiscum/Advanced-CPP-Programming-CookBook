@@ -33,7 +33,7 @@ void foo()
     throw std::runtime_error("The answer is: 42");
 }
 
-int main(void)
+int main()
 {
     try {
         foo();

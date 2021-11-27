@@ -19,10 +19,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-namespace library_name
-{
-    namespace config
-    {
-        inline bool show_hex = false;
-    }
+namespace library_name::config {
+    inline bool show_hex = false;
 }

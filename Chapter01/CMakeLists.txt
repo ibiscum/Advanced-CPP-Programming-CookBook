@@ -24,7 +24,7 @@
 # ------------------------------------------------------------------------------
 
 cmake_minimum_required(VERSION 3.6)
-project(chapter01)
+project(Chapter01)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -32,12 +32,12 @@ set(CMAKE_CXX_STANDARD 17)
 # Recipe 01
 # ------------------------------------------------------------------------------
 
-add_custom_target(recipe01_examples)
+add_custom_target(ch01_rcp01_ex)
 
 function(example number)
-    add_executable(recipe01_example${number} recipe01.cpp)
-    target_compile_definitions(recipe01_example${number} PRIVATE EXAMPLE${number})
-    add_dependencies(recipe01_examples recipe01_example${number})
+    add_executable(ch01_rcp01_ex${number} ch01_rcp01.cpp)
+    target_compile_definitions(ch01_rcp01_ex${number} PRIVATE EXAMPLE${number})
+    add_dependencies(ch01_rcp01_ex ch01_rcp01_ex${number})
 endfunction(example)
 
 example(01)
@@ -57,7 +57,7 @@ example(09)
 add_custom_target(recipe02_examples)
 
 function(example number)
-    add_executable(recipe02_example${number} recipe02.cpp)
+    add_executable(recipe02_example${number} ch01_recipe02.cpp)
     target_compile_definitions(recipe02_example${number} PRIVATE EXAMPLE${number})
     add_dependencies(recipe02_examples recipe02_example${number})
 endfunction(example)
@@ -90,7 +90,7 @@ foreach(LINE IN LISTS MY_LIBRARY_SINGLE)
 endforeach()
 
 function(example number)
-    add_executable(recipe03_example${number} recipe03.cpp)
+    add_executable(recipe03_example${number} ch01_recipe03.cpp)
     target_compile_definitions(recipe03_example${number} PRIVATE EXAMPLE${number})
     add_dependencies(recipe03_examples recipe03_example${number})
 endfunction(example)
@@ -112,7 +112,7 @@ add_custom_target(recipe04_examples)
 set(CMAKE_CXX_CLANG_TIDY clang-tidy)
 
 function(example number)
-    add_executable(recipe04_example${number} recipe04.cpp)
+    add_executable(recipe04_example${number} ch01_recipe04.cpp)
     target_compile_definitions(recipe04_example${number} PRIVATE EXAMPLE${number})
     add_dependencies(recipe04_examples recipe04_example${number})
 endfunction(example)
@@ -126,7 +126,7 @@ example(01)
 add_custom_target(recipe05_examples)
 
 function(example number)
-    add_executable(recipe05_example${number} recipe05.cpp)
+    add_executable(recipe05_example${number} ch01_recipe05.cpp)
     target_compile_definitions(recipe05_example${number} PRIVATE EXAMPLE${number} BOOST_LOG_DYN_LINK)
     add_dependencies(recipe05_examples recipe05_example${number})
     target_link_libraries(recipe05_example${number} boost_chrono boost_log boost_system pthread)

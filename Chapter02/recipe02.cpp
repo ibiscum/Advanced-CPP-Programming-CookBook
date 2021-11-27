@@ -33,7 +33,7 @@ void foo()
     std::cout << "The answer is: 42\n";
 }
 
-int main(void)
+int main()
 {
     std::cout << std::boolalpha;
     std::cout << "could foo throw: " << !noexcept(foo()) << '\n';

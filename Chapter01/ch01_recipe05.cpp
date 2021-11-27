@@ -22,55 +22,34 @@
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE01
 
-// Contents of library.h
-
-namespace library_name
-{
-    int my_api() { return 42; }
-    // ...
-}
-
-// Contents of main.cpp
-
 #include <iostream>
+#include <boost/chrono.hpp>
 
-int main(void)
+int main()
 {
-    using namespace library_name;
+    using namespace boost::chrono;
 
-    std::cout << "The answer is: " << my_api() << '\n';
+    std::cout << "Date/Time: " <<  system_clock::now() << '\n';
     return 0;
 }
 
-// The answer is: 42
+// Date/Time: 1553806902449578972 nanoseconds since Jan 1, 1970
 
 #endif
 
 // -----------------------------------------------------------------------------
 #ifdef EXAMPLE02
 
-// Contents of library.h
-
-namespace library_name
-{
-    namespace details { inline int answer = 42; }
-
-    int my_api() { return details::answer; }
-    // ...
-}
-
-// Contents of main.cpp
-
-#include <iostream>
+#include <boost/log/trivial.hpp>
 
 int main(void)
 {
-    using namespace library_name;
-
-    std::cout << "The answer is: " << my_api() << '\n';
+    BOOST_LOG_TRIVIAL(debug) << "debug message";
+    BOOST_LOG_TRIVIAL(info) << "info message";
     return 0;
 }
 
-// The answer is: 42
+// [2019-03-28 15:07:16.593304] [0x00007fc1f534d740] [debug]   debug message
+// [2019-03-28 15:07:16.593345] [0x00007fc1f534d740] [info]    info message
 
 #endif

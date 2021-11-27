@@ -24,7 +24,7 @@
 # ------------------------------------------------------------------------------
 
 cmake_minimum_required(VERSION 3.6)
-project(chapter02)
+project(Chapter02)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -116,4 +116,3 @@ endfunction(example)
 example(01)
 example(02)
 example(03)
-

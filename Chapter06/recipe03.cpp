@@ -118,7 +118,7 @@ int main(void)
 // mem_stacks_B=0
 // heap_tree=peak
 // n2: 472704 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
-//  n0: 400000 0x401147: main (in /home/user/book/chapter06/build/recipe03_example02)
+//  n0: 400000 0x401147: main (in /home/user/book/Chapter06/build/recipe03_example02)
 //  n1: 72704 0x4922E89: ??? (in /usr/lib64/libstdc++.so.6.0.26)
 //   n1: 72704 0x400FF59: call_init.part.0 (in /usr/lib64/ld-2.29.so)
 //    n1: 72704 0x4010060: _dl_init (in /usr/lib64/ld-2.29.so)

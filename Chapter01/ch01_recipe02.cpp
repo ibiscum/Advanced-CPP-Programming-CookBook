@@ -19,22 +19,58 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "config.h"
+// -----------------------------------------------------------------------------
+#ifdef EXAMPLE01
 
-#include <iostream>
-#include <iomanip>
+// Contents of library.h
 
 namespace library_name
 {
-	void my_api()
-	{
-		if (config::show_hex)
-		{
-			std::cout << std::hex << "The answer is: " << 42 << '\n';
-		}
-		else
-		{
-			std::cout << std::dec << "The answer is: " << 42 << '\n';
-		}
-	}
+    int my_api() { return 42; }
+    // ...
 }
+
+// Contents of main.cpp
+
+#include <iostream>
+
+int main()
+{
+    using namespace library_name;
+
+    std::cout << "The answer is: " << my_api() << '\n';
+    return 0;
+}
+
+// The answer is: 42
+
+#endif
+
+// -----------------------------------------------------------------------------
+#ifdef EXAMPLE02
+
+// Contents of library.h
+
+namespace library_name
+{
+    namespace details { inline int answer = 42; }
+
+    int my_api() { return details::answer; }
+    // ...
+}
+
+// Contents of main.cpp
+
+#include <iostream>
+
+int main(void)
+{
+    using namespace library_name;
+
+    std::cout << "The answer is: " << my_api() << '\n';
+    return 0;
+}
+
+// The answer is: 42
+
+#endif

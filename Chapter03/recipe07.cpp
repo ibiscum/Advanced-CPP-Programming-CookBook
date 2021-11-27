@@ -99,11 +99,11 @@ int main(void)
     return 0;
 }
 
-// /home/user/book/chapter03/recipe07.cpp: In function ‘int main()’:
-// /home/user/book/chapter03/recipe07.cpp:106:30: error: use of deleted function ‘the_answer& the_answer::operator=(the_answer&&)’
+// /home/user/book/Chapter03/recipe07.cpp: In function ‘int main()’:
+// /home/user/book/Chapter03/recipe07.cpp:106:30: error: use of deleted function ‘the_answer& the_answer::operator=(the_answer&&)’
 //      is_what = std::move(is_42);
 //                               ^
-// /home/user/book/chapter03/recipe07.cpp:95:17: note: declared here
+// /home/user/book/Chapter03/recipe07.cpp:95:17: note: declared here
 //      the_answer &operator=(the_answer &&other) noexcept = delete;
 //                  ^~~~~~~~
 

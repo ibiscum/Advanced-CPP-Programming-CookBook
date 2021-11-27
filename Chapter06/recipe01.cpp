@@ -67,9 +67,9 @@ int main(void)
 // Ir       file:function
 // ------------------------------------------------------------
 // 938,046  ???:_dl_lookup_symbol_x [/usr/lib64/ld-2.29.so]
-// 800,000  ???:foo() [/home/user/book/chapter06/build/recipe01_example02]
+// 800,000  ???:foo() [/home/user/book/Chapter06/build/recipe01_example02]
 // 761,954  ???:do_lookup_x [/usr/lib64/ld-2.29.so]
-// 500,009  ???:main [/home/user/book/chapter06/build/recipe01_example02]
+// 500,009  ???:main [/home/user/book/Chapter06/build/recipe01_example02]
 // 366,967  ???:_dl_relocate_object [/usr/lib64/ld-2.29.so]
 // 132,922  ???:strcmp [/usr/lib64/libc-2.29.so]
 // 118,879  ???:check_match [/usr/lib64/ld-2.29.so]
