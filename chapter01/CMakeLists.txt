@@ -27,6 +27,8 @@ cmake_minimum_required(VERSION 3.6)
 project(Chapter01)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "-Wall -Wcast-align -Wconversion -Wctor-dtor-privacy -Werror -Wextra -Wpedantic -Wshadow -Wsign-conversion")
+# set(CMAKE_CXX_CLANG_TIDY clang-tidy)
 
 # ------------------------------------------------------------------------------
 # Recipe 01
@@ -54,12 +56,12 @@ example(09)
 # Recipe 02
 # ------------------------------------------------------------------------------
 
-add_custom_target(recipe02_examples)
+add_custom_target(ch01_rcp02_ex)
 
 function(example number)
-    add_executable(recipe02_example${number} ch01_recipe02.cpp)
-    target_compile_definitions(recipe02_example${number} PRIVATE EXAMPLE${number})
-    add_dependencies(recipe02_examples recipe02_example${number})
+    add_executable(ch01_rcp02_ex${number} ch01_rcp02.cpp)
+    target_compile_definitions(ch01_rcp02_ex${number} PRIVATE EXAMPLE${number})
+    add_dependencies(ch01_rcp02_ex ch01_rcp02_ex${number})
 endfunction(example)
 
 example(01)
